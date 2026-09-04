@@ -1,0 +1,61 @@
+{
+  "updated": "2026-09-04",
+  "members": [
+    {
+      "name": "Jason Mathew",
+      "role": "President",
+      "photo": "",
+      "email": "jam8654@psu.edu",
+      "linkedin": ""
+    },
+    {
+      "name": "William Varghese",
+      "role": "Vice President",
+      "photo": "",
+      "email": "wcv5023@psu.edu",
+      "linkedin": ""
+    },
+    {
+      "name": "Nicholas Golter",
+      "role": "Treasurer",
+      "photo": "",
+      "email": "nag5581@psu.edu",
+      "linkedin": ""
+    },
+    {
+      "name": "Prudhivi Jandhyala",
+      "role": "Secretary",
+      "photo": "",
+      "email": "pbj5082@psu.edu",
+      "linkedin": ""
+    },
+    {
+      "name": "Raoda Haque",
+      "role": "Event Coordinator",
+      "photo": "",
+      "email": "rfh5501@psu.edu",
+      "linkedin": ""
+    },
+    {
+      "name": "Zainab Afridi",
+      "role": "Social Media Director",
+      "photo": "",
+      "email": "zka5081@psu.edu",
+      "linkedin": ""
+    },
+    {
+      "name": "Moussa Toure",
+      "role": "Event Planner",
+      "photo": "",
+      "email": "mmt6227@psu.edu",
+      "linkedin": ""
+    },
+    {
+      "name": "Joseph Oakes",
+      "role": "Co-Advisor",
+      "photo": "",
+      "email": "jxo19@psu.edu",
+      "linkedin": ""
+    }
+  ]
+}
