@@ -35,9 +35,9 @@
   --hero-shade-mid: rgba(5, 11, 24, .86);
   --white: #ffffff;
 
-  --type-meeting: #2f7dff;
-  --type-comehack: #35c4ff;
-  --type-workshop: #8b9dff;
+  --type-meeting: #4a8dff;
+  --type-comehack: #22e3a5;
+  --type-workshop: #c084fc;
   --type-social: #ffb547;
   --type-competition: #ff5f7a;
   --type-other: #93a8cf;
@@ -74,8 +74,8 @@
     --hero-shade-mid: rgba(244, 247, 252, .92);
 
     --type-meeting: #1f5fd0;
-    --type-comehack: #0b7fa8;
-    --type-workshop: #4f5fd6;
+    --type-comehack: #0f7a4f;
+    --type-workshop: #7c3aed;
     --type-social: #9a5b00;
     --type-competition: #c22d4a;
     --type-other: #4a5f85;
@@ -105,8 +105,8 @@
   --hero-shade-mid: rgba(244, 247, 252, .92);
 
   --type-meeting: #1f5fd0;
-  --type-comehack: #0b7fa8;
-  --type-workshop: #4f5fd6;
+  --type-comehack: #0f7a4f;
+  --type-workshop: #7c3aed;
   --type-social: #9a5b00;
   --type-competition: #c22d4a;
   --type-other: #4a5f85;
