@@ -24,7 +24,7 @@ Meetings and events live in [`data/events.json`](data/events.json). Edit that fi
 | `type` | yes | one of `meeting`, `come-hack`, `workshop`, `social`, `competition`, `other` | Controls the color used in the calendar. |
 | `start` | no | `HH:MM` (24h) | Omit both `start` and `end` for an all-day event. |
 | `end` | no | `HH:MM` (24h) | Must be after `start`. |
-| `location` | no | string | e.g. `"Woodland Building 220"`. |
+| `location` | no | string | e.g. `"Academic Building 309"`. |
 | `summary` | no | string | One line, shown in cards and list rows. |
 | `description` | no | string | Longer text, shown in the detail panel. |
 | `url` | no | URL | Must start with `http://` or `https://`. Shown as "Details"/"Event page". |
@@ -43,7 +43,7 @@ skipping Thanksgiving week:
   "date": "2026-10-01",
   "start": "17:00",
   "end": "18:00",
-  "location": "Woodland Building 220",
+  "location": "Academic Building 309",
   "type": "workshop",
   "repeat": { "every": "2w", "until": "2026-12-10", "skip": ["2026-11-26"] }
 }

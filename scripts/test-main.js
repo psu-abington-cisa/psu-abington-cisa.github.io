@@ -80,7 +80,7 @@ function assertTrue(cond, msg) {
   var occ = {
     id: 'e1', occId: 'e1', title: 'First General Meeting',
     date: '2026-09-10', start: '12:15', end: '13:15',
-    location: 'Woodland Building 220', summary: 'Kick off the semester.'
+    location: 'Academic Building 309', summary: 'Kick off the semester.'
   };
   var url = main.toGCal(occ);
   assertTrue(url.indexOf('20260910T121500/20260910T131500') !== -1,
@@ -94,7 +94,7 @@ function assertTrue(cond, msg) {
   var occ = {
     id: 'e1', occId: 'e1', title: 'First General Meeting',
     date: '2026-09-10', start: '12:15', end: '13:15',
-    location: 'Woodland Building 220',
+    location: 'Academic Building 309',
     summary: 'Meet the club, e-board, and friends.'
   };
   var ics = main.toIcs(occ);
@@ -131,7 +131,7 @@ function assertTrue(cond, msg) {
   var occ = {
     id: 'e-fold', occId: 'e-fold', title: 'Fold Test Event',
     date: '2026-09-10', start: '12:15', end: '13:15',
-    location: 'Woodland Building 220',
+    location: 'Academic Building 309',
     description: longDescription
   };
   var ics = main.toIcs(occ);
