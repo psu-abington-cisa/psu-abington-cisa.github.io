@@ -30,6 +30,7 @@
       "summary": "Biweekly hands-on session: learn how real systems are attacked, defended, investigated, and analyzed. Laptop recommended; workstations available.",
       "description": "Led by Moussa Toure. Guided learning plus practical labs on cyber ranges (TryHackMe, OffSec Labs, Hack Smarter, PortSwigger) and custom-built labs. No prior experience required.",
       "url": "https://psu-abington-cisa.github.io/come-hack/",
+      "repeat": { "every": "2w", "until": "2026-12-10", "skip": ["2026-11-26"] },
       "tags": [
         "Hands-on",
         "Biweekly"
