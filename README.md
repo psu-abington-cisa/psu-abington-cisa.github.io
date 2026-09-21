@@ -43,7 +43,7 @@ skipping Thanksgiving week:
   "date": "2026-10-01",
   "start": "17:00",
   "end": "18:00",
-  "location": "Academic Building 309",
+  "location": "Woodland Building 132A",
   "type": "workshop",
   "repeat": { "every": "2w", "until": "2026-12-10", "skip": ["2026-11-26"] }
 }
