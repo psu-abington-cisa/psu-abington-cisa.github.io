@@ -17,7 +17,7 @@
   function getEffective() {
     var attr = root.getAttribute('data-theme');
     if (attr === 'light' || attr === 'dark') return attr;
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
   }
 
   function setTheme(mode) {
@@ -91,6 +91,8 @@
   }
 
   if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', sync);
+    var mql = window.matchMedia('(prefers-color-scheme: light)');
+    if (mql.addEventListener) mql.addEventListener('change', sync);
+    else if (mql.addListener) mql.addListener(sync); // older Safari
   }
 })();

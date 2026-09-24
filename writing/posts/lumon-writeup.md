@@ -142,7 +142,7 @@ We took a look at the website to see what's there and found an admin page and a 
 
 ![](Attachments/Pasted%20image%2020260912190438.png)
 
-![478](Attachments/Pasted%20image%2020260912033322.png)
+![](Attachments/Pasted%20image%2020260912033322.png)
 
 At this point we ended up doing a directory busting attack on the website and uncovered an exposed .git repository, hoping to find credentials stored there:
 

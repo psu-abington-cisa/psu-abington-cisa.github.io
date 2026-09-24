@@ -147,8 +147,7 @@ def find_unlisted_pdfs(used_pdfs):
 
 def main():
     used = validate_presentations(load_json(DATA_PATH, "presentations.json"))
-    if not problems:
-        find_unlisted_pdfs(used)
+    find_unlisted_pdfs(used)
 
     for w in warnings:
         print("warning: " + w)

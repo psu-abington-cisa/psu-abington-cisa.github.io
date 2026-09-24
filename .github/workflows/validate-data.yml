@@ -1,0 +1,79 @@
+name: Validate site data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "scripts/**"
+      - "assets/js/**"
+      - "writing/posts/**"
+      - "writing/posts.json"
+      - "writing/tools/**"
+      - "come-hack-presentations/data/**"
+      - "come-hack-presentations/presentations/**"
+      - "come-hack-presentations/scripts/**"
+      - "come-hack-presentations/assets/js/**"
+      - ".github/workflows/validate-data.yml"
+  pull_request:
+    paths:
+      - "data/**"
+      - "scripts/**"
+      - "assets/js/**"
+      - "writing/posts/**"
+      - "writing/posts.json"
+      - "writing/tools/**"
+      - "come-hack-presentations/data/**"
+      - "come-hack-presentations/presentations/**"
+      - "come-hack-presentations/scripts/**"
+      - "come-hack-presentations/assets/js/**"
+      - ".github/workflows/validate-data.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      # Main site
+      - name: Validate data/events.json, board.json, founders.json
+        run: python3 scripts/validate.py
+
+      - name: Unit-test the calendar helpers
+        run: node scripts/test-main.js
+
+      # Write-ups (writing/)
+      - name: Validate write-ups
+        run: python3 writing/tools/validate.py
+
+      # The feed is a committed file (there is no build server), so rebuild
+      # it whenever write-ups change on main, and commit it if it moved.
+      - name: Rebuild writing/feed.xml
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          python3 writing/tools/build_feed.py
+          if git diff --quiet -- writing/feed.xml; then
+            echo "feed.xml is up to date"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Rebuild writing/feed.xml" -- writing/feed.xml
+            git push
+          fi
+
+      # Come Hack presentations (come-hack-presentations/)
+      - name: Validate presentations.json
+        run: python3 come-hack-presentations/scripts/validate.py
+
+      - name: Unit-test the presentations page helpers
+        run: node come-hack-presentations/scripts/test-app.js

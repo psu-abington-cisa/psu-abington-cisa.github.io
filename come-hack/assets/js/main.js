@@ -150,7 +150,7 @@
 
   /** Expand an event's optional `repeat` block into dated occurrences. */
   function expandRepeat(ev) {
-    if (!ev.repeat) return [ev];
+    if (!ev.repeat || !ev.repeat.until) return [ev];
     var step = ev.repeat.every === '2w' ? 14 : 7;
     var skip = ev.repeat.skip || [];
     var out = [];
@@ -225,9 +225,19 @@
     });
   }
 
+  /** The header blends into the hero at the top; its edge fades in on scroll. */
+  function wireHeaderScroll() {
+    var header = document.querySelector('.site-header');
+    if (!header) return;
+    var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 4); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     wireThemeToggle();
     wireMenu();
+    wireHeaderScroll();
     loadMeeting();
     loadContacts();
   });

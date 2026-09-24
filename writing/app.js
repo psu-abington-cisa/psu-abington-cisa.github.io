@@ -85,9 +85,16 @@ const mathInline = {
 marked.use({
   extensions: [mathBlock, mathInline],
   walkTokens(token) {
-    if (token.type !== "image" || !assetBase) return;
-    if (/^(?:[a-z][a-z0-9+.-]*:|\/\/|\/|#)/i.test(token.href)) return;
-    token.href = assetBase + token.href;
+    if (!assetBase) return;
+    const isRelative = (ref) => !/^(?:[a-z][a-z0-9+.-]*:|\/\/|\/|#)/i.test(ref);
+    if (token.type === "image") {
+      if (isRelative(token.href)) token.href = assetBase + token.href;
+    } else if (token.type === "html" && typeof token.text === "string") {
+      // Raw <img src="Attachments/x.png"> in a write-up, which the validator
+      // also accepts, is rebased the same way as a markdown image.
+      token.text = token.text.replace(/(<img\b[^>]*\bsrc=["'])([^"']+)/gi,
+        (m, pre, src) => (isRelative(src) ? pre + assetBase + src : m));
+    }
   }
 });
 
@@ -199,7 +206,7 @@ function renderTagFilter() {
   const tags = allTags();
   if (!tags.length) { tagFilter.innerHTML = ""; return; }
   const pill = (value, label, active) =>
-    `<li><button class="pill${active ? " active" : ""}" data-filter="${escapeHtml(value)}" aria-pressed="${active ? "true" : "false"}">${escapeHtml(label)}</button></li>`;
+    `<li><button type="button" class="pill${active ? " active" : ""}" data-filter="${escapeHtml(value)}" aria-pressed="${active ? "true" : "false"}">${escapeHtml(label)}</button></li>`;
   tagFilter.innerHTML =
     `<li><span class="sh">Filter</span></li>` +
     pill("all", "All", activeTag === "all") +
@@ -490,8 +497,16 @@ function route(loadedPosts) {
 
 /* Mobile nav: the header collapses behind a toggle on small screens. */
 function setupNav() {
-  const toggle = document.querySelector("#navToggle");
-  const nav = document.querySelector("#siteNav");
+  // The header blends into the hero at the top; its edge fades in on scroll.
+  const header = document.querySelector(".site-header");
+  if (header) {
+    const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 4);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  const toggle = document.querySelector("#menu-toggle");
+  const nav = document.querySelector("#site-nav");
   if (!toggle || !nav) return;
   toggle.addEventListener("click", () => {
     const open = nav.classList.toggle("open");
@@ -503,7 +518,7 @@ function setupNav() {
 }
 
 function showLoadError() {
-  list.innerHTML = `<div class="notice"><p>The write-ups could not be loaded. If you are previewing locally, serve this folder over HTTP, for example <code>python3 -m http.server 8000</code>, then reload.</p></div>`;
+  list.innerHTML = `<div class="notice"><p>The write-ups could not be loaded. If you are previewing locally, serve the repo root over HTTP, for example <code>python3 -m http.server 8000</code>, and open <code>/writing/</code>, then reload.</p></div>`;
 }
 
 async function start() {

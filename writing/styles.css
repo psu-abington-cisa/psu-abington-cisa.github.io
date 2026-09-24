@@ -89,7 +89,10 @@
 
 /* ---------- reset-ish ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+/* scrollbar-gutter keeps the layout width identical whether or not a page is
+   tall enough to scroll, so the header doesn't shift between pages. */
+html { scroll-behavior: smooth; scroll-padding-top: 84px; scrollbar-gutter: stable; }
+@media (max-width: 920px) { html { scroll-padding-top: 72px; } }
 
 body {
   margin: 0;
@@ -172,6 +175,7 @@ a:hover { color: var(--ink); }
   color: var(--on-navy-body);
   cursor: pointer;
 }
+.icon-btn { transition: background .18s ease, color .18s ease; }
 .icon-btn:hover { background: rgba(255, 255, 255, .06); color: #fff; }
 .icon-btn svg { width: 18px; height: 18px; }
 
@@ -181,7 +185,21 @@ a:hover { color: var(--ink); }
   top: 0;
   z-index: 100;
   background: var(--navy);
-  border-bottom: 1px solid var(--navy-line);
+  /* Blends into the navy hero at the top of the page; the edge and shadow
+     fade in once the visitor scrolls (JS toggles .is-scrolled). */
+  border-bottom: 1px solid transparent;
+  transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease;
+}
+.site-header.is-scrolled {
+  border-bottom-color: var(--navy-line);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .22);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-header.is-scrolled {
+    background: color-mix(in srgb, var(--navy) 90%, transparent);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    backdrop-filter: saturate(160%) blur(12px);
+  }
 }
 .nav {
   height: 76px;
@@ -214,6 +232,7 @@ a:hover { color: var(--ink); }
   font-weight: 500;
   padding: 8px 0;
   border-bottom: 2px solid transparent;
+  transition: color .18s ease, border-color .18s ease;
 }
 .nav-links a:hover { color: #fff; }
 .nav-links a.active { color: #fff; border-bottom-color: var(--accent); }
@@ -237,12 +256,16 @@ a:hover { color: var(--ink); }
   mix-blend-mode: normal;
 }
 
+@media (max-width: 1240px) {
+  .brand-sub { display: none; }
+  .nav { gap: 20px; }
+  .nav-links { gap: 20px; }
+}
 @media (max-width: 920px) {
   .nav { height: 64px; gap: 20px; }
   .menu-btn { display: inline-flex; }
   .nav-cta { display: none; }
   .nav-links {
-    display: none;
     position: absolute;
     top: 64px;
     left: 0;
@@ -253,14 +276,18 @@ a:hover { color: var(--ink); }
     padding: 8px var(--gutter) 16px;
     background: var(--navy);
     border-bottom: 1px solid var(--navy-line);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, .28);
+    /* Slides and fades in instead of popping; visibility keeps it out of
+       the tab order while closed. */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity .22s ease, transform .22s ease, visibility 0s linear .22s;
   }
-  .nav-links.open { display: flex; }
+  .nav-links.open { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
   .nav-links a { padding: 14px 0; font-size: 17px; border-bottom: 1px solid var(--navy-line); }
   .nav-links a.active { border-bottom-color: var(--navy-line); box-shadow: inset 3px 0 0 var(--accent); padding-left: 12px; }
   .nav-links a:last-child { border-bottom: none; }
-}
-@media (max-width: 420px) {
-  .brand-sub { display: none; }
 }
 
 /* ---------- hero (index only) ---------- */

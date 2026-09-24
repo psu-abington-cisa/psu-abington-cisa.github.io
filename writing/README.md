@@ -69,11 +69,15 @@ for the structure we use.
 
 ## Preview locally
 
+Run the server from the **repo root** (one level up from this folder), because this page shares
+the font from `../assets/fonts/` and links back to the main site with `../`:
+
 ```sh
+cd ..
 python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000>. (Opening `index.html` directly from Finder won't work — the
+Then open <http://localhost:8000/writing/>. (Opening `index.html` directly from Finder won't work — the
 browser blocks `fetch()` on `file://` URLs.)
 
 ## Checks

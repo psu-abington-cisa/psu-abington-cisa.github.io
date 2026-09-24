@@ -15,7 +15,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import writeups  # noqa: E402
 
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-IMAGE_RE = re.compile(r"!\[[^\]]*\]\(\s*<?([^)\s>]+)>?")
+# Either ![alt](path) or the angle-bracket form ![alt](<path with spaces>).
+IMAGE_RE = re.compile(r"!\[[^\]]*\]\(\s*(?:<([^>]+)>|([^)\s]+))")
 # Images can also be written as raw HTML, e.g. <img src="Attachments/x.png" width="400">.
 HTML_IMG_RE = re.compile(r"<img\b[^>]*\bsrc=[\"']([^\"']+)[\"']", re.I)
 EXTERNAL_RE = re.compile(r"^(?:[a-z][a-z0-9+.-]*:|//|/|#)", re.I)
@@ -68,7 +69,8 @@ def validate_post(entry):
 
     post_dir = os.path.dirname(os.path.join(writeups.ROOT, entry["file"]))
     body = CODE_RE.sub("", post["body"])
-    for ref in IMAGE_RE.findall(body) + HTML_IMG_RE.findall(body):
+    md_refs = [angled or plain for angled, plain in IMAGE_RE.findall(body)]
+    for ref in md_refs + HTML_IMG_RE.findall(body):
         if EXTERNAL_RE.match(ref):
             continue
         if not os.path.isfile(os.path.join(post_dir, unquote(ref))):

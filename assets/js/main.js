@@ -88,7 +88,8 @@
    */
   function expandRepeat(event) {
     var occurrences = [];
-    if (!event || !event.repeat) {
+    // A repeat block without an end date can't be expanded; treat it as a one-off.
+    if (!event || !event.repeat || !event.repeat.until) {
       var single = shallowCopy(event);
       single.occId = event.id;
       occurrences.push(single);
@@ -393,6 +394,47 @@
     function wireStaticUI() {
       var year = document.getElementById('footer-year');
       if (year) year.textContent = String(new Date().getFullYear());
+      wireHeaderScroll();
+      wireScrollSpy();
+    }
+
+    /** The header blends into the hero at the top; its edge fades in on scroll. */
+    function wireHeaderScroll() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 4); };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    /** Highlight the nav link for the section currently on screen. */
+    function wireScrollSpy() {
+      var nav = document.getElementById('site-nav');
+      if (!nav || !('IntersectionObserver' in window)) return;
+      var pairs = [];
+      nav.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        var section = document.getElementById(link.getAttribute('href').slice(1));
+        if (section) pairs.push({ link: link, section: section });
+      });
+      if (!pairs.length) return;
+      var visible = {};
+      function setActive(id) {
+        pairs.forEach(function (p) {
+          var on = p.section.id === id;
+          p.link.classList.toggle('active', on);
+          if (on) p.link.setAttribute('aria-current', 'location');
+          else p.link.removeAttribute('aria-current');
+        });
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) { visible[entry.target.id] = entry.isIntersecting; });
+        var current = null;
+        for (var i = 0; i < pairs.length; i++) {
+          if (visible[pairs[i].section.id]) { current = pairs[i].section.id; break; }
+        }
+        setActive(current);
+      }, { rootMargin: '-35% 0px -60% 0px', threshold: 0 });
+      pairs.forEach(function (p) { observer.observe(p.section); });
     }
 
     function safeLocalGet(key) {
