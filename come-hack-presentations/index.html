@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Come Hack slides &amp; recordings — CISA | Penn State Abington</title>
+<meta name="description" content="Slides and recordings from Come Hack, CISA's hands-on cybersecurity sessions at Penn State Abington.">
+<meta name="theme-color" content="#0b1f3a">
+<link rel="icon" href="assets/img/cisa-logo.jpg">
+<link rel="apple-touch-icon" href="assets/img/cisa-logo.jpg">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('cisa-theme');
+    if (t === 'light' || t === 'dark') {
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  } catch (e) { /* localStorage unavailable; fall back to OS preference via CSS */ }
+})();
+</script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../">
+      <img src="assets/img/cisa-logo.jpg" alt="CISA logo" width="44" height="44">
+      <span class="brand-name">CISA</span>
+      <span class="brand-sub">Come Hack slides</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="./">Slides</a>
+      <a href="../">CISA site</a>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch to light theme">
+        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <noscript><p class="empty-msg">This page needs JavaScript to load the list of presentations.</p></noscript>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <span class="pill"><span class="dot" aria-hidden="true"></span>Come Hack · every other Thursday</span>
+        <h1>Slides &amp; recordings.</h1>
+        <p class="lede">Every Come Hack deck in one place. Missed a session or want to redo a lab at home? Start here.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="list-heading">
+    <div class="container">
+      <div class="section-head-row">
+        <div>
+          <p class="kicker">All sessions</p>
+          <h2 id="list-heading">Pick up where you left off.</h2>
+        </div>
+        <div class="search" role="search">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          <label class="visually-hidden" for="search">Search presentations</label>
+          <input type="search" id="search" placeholder="Search by title, date, or session" autocomplete="off">
+        </div>
+      </div>
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+      <div class="deck-grid" id="deck-grid">
+        <p class="empty-msg">Loading presentations…</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/img/cisa-logo.jpg" alt="" width="44" height="44">
+      <div>
+        <p>Cybersecurity &amp; IT Student Association · Penn State Abington</p>
+        <p class="footer-fine">A student organization website. Not an official publication of Penn State University. &copy; <span id="footer-year">2026</span> CISA.</p>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Elsewhere">
+      <a href="../">CISA site</a>
+      <a href="../come-hack/">Come Hack</a>
+      <a href="https://www.instagram.com/abingtoncisa" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

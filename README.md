@@ -1,0 +1,203 @@
+# CISA @ Penn State Abington — website
+
+Source for [cisa.cybernet.rocks](https://cisa.cybernet.rocks), the site for the
+Cybersecurity & IT Student Association (CISA) at Penn State Abington. It's a plain static site —
+no build step, no framework, no bundler, and no third-party scripts or fonts — served straight from
+this repo by GitHub Pages. (The one third-party embed is the Microsoft Forms interest form on the
+home page.) The typeface is self-hosted Roboto (no CDN, no Google Fonts link), and the
+site has a light/dark theme toggle in the top nav that remembers the visitor's choice.
+
+This README is written for e-board members who aren't developers. If you can edit a file on
+GitHub.com, you can update this site.
+
+The repo also holds the sub-sites, each in its own folder with its own README:
+
+- [`come-hack/`](come-hack/) — the Come Hack landing page (`cisa.cybernet.rocks/come-hack/`).
+- [`come-hack-presentations/`](come-hack-presentations/) — slides and recordings from Come Hack
+  sessions (`cisa.cybernet.rocks/come-hack-presentations/`).
+- [`writing/`](writing/) — CTF write-ups, lab notes, and guides (`cisa.cybernet.rocks/writing/`).
+
+## Update the schedule
+
+Meetings and events live in [`data/events.json`](data/events.json). Edit that file, commit to
+`main`, and the live site updates automatically within about a minute.
+
+**Field reference:**
+
+| Field | Required? | Format | Notes |
+|---|---|---|---|
+| `id` | yes | slug string | Must be unique across all events. |
+| `title` | yes | string | Shown everywhere as the event name. |
+| `date` | yes | `YYYY-MM-DD` | First/only occurrence date. |
+| `type` | yes | one of `meeting`, `come-hack`, `workshop`, `social`, `competition`, `other` | Controls the event's color in the calendar. |
+| `start` | no | `HH:MM` (24h) | Omit both `start` and `end` for an all-day event. |
+| `end` | no | `HH:MM` (24h) | Must be after `start`. |
+| `location` | no | string | e.g. `"Academic Building 309"`. |
+| `summary` | no | string | One line, shown on the "Next session" card at the top of the page. |
+| `description` | no | string | Longer text, shown in the detail panel. |
+| `url` | no | URL or path | Either a full `http://`/`https://` URL or a path within this site, e.g. `come-hack/`. Shown as "Details"/"Event page". |
+| `tags` | no | array of strings | Small labels shown on the event. |
+| `featured` | no | boolean | Reserved; not currently shown. |
+| `cancelled` | no | boolean | Left off the tiles and "Next session" card; struck through with a "Cancelled" badge in the calendar. |
+| `repeat` | no | object | See below — expands into multiple occurrences. |
+
+**Recurrence example** — a biweekly meeting every other Thursday from Oct 1 through Dec 10,
+skipping Thanksgiving week:
+
+```json
+{
+  "id": "2026-10-01-workshop",
+  "title": "Workshop Night",
+  "date": "2026-10-01",
+  "start": "17:00",
+  "end": "18:00",
+  "location": "Academic Building 309",
+  "type": "workshop",
+  "repeat": { "every": "2w", "until": "2026-12-10", "skip": ["2026-11-26"] }
+}
+```
+
+`repeat.every` is `"1w"` (weekly) or `"2w"` (biweekly). `repeat.until` is the last date to
+generate (inclusive). `repeat.skip` is an optional list of dates to omit (e.g. a holiday week) —
+the recurrence still counts through the skipped date, it's just left out of the result. Each skip
+date must fall on the recurrence (the validator checks this).
+
+The top-level `"timezone"` (an IANA zone such as `America/New_York`) is what "Add to Google
+Calendar" links use.
+
+**To edit on GitHub.com (no local setup needed):**
+
+1. Go to [`data/events.json`](https://github.com/psu-abington-cisa/psu-abington-cisa.github.io/blob/main/data/events.json) on GitHub.
+2. Click the pencil (✏️) icon to edit.
+3. Make your change, keeping the JSON valid (matching commas/brackets).
+4. Scroll down, add a short commit message, and choose "Commit directly to the `main` branch."
+5. The site rebuilds automatically — check back in about a minute.
+
+If you're unsure whether your edit is valid JSON, paste it into a linter like
+[jsonlint.com](https://jsonlint.com) first, or ask someone to run `python3 scripts/validate.py`
+(see [Checks](#checks) below) before committing.
+
+## Update the e-board
+
+Roster lives in [`data/board.json`](data/board.json). Each member is:
+
+```json
+{ "name": "Full Name", "role": "Role Title", "photo": "", "email": "", "linkedin": "", "portfolio": "" }
+```
+
+- `name` and `role` are required. `photo`, `email`, `linkedin`, and `portfolio` are optional —
+  leave them as empty strings `""` if unknown, or leave the key out entirely.
+- `"contact": true` marks a member as a point of contact. Members with this flag (and an email)
+  are listed in the FAQ's "Something else?" line and on the Come Hack page's contact section.
+- `linkedin` and `portfolio` must be full URLs starting with `http://` or `https://`. Each one
+  that's filled in adds a link under the member's name.
+- To add a photo: upload a square image (recommended ≥400×400px, JPG or PNG) into
+  [`assets/img/board/`](assets/img/board/), then set `"photo"` to the filename only, e.g.
+  `"jason-mathew.jpg"` (the site automatically looks inside `assets/img/board/`).
+- Members with no photo show a placeholder avatar. A member named exactly `"Name TBD"` shows a
+  "Photo coming soon" note instead of initials.
+
+## Update the founders
+
+The club's founders are listed separately, in [`data/founders.json`](data/founders.json), under a
+`"founders"` array. Each founder is:
+
+```json
+{
+  "name": "Full Name",
+  "role": "Founder",
+  "title": "Job Title",
+  "org": "Employer",
+  "photo": "",
+  "email": "",
+  "linkedin": ""
+}
+```
+
+- Same rules as board members, plus two extra optional fields: `title` (their current job title)
+  and `org` (where they work). They render together under the role, as `Job Title · Employer`.
+  Fill in either, both, or neither.
+- Founder photos go in `assets/img/founders/` (not `assets/img/board/`) — create that folder when
+  you add the first one. Founders with no photo show the same placeholder avatar as the e-board.
+
+## Preview locally
+
+No install needed — any static file server works. From the repo root:
+
+```
+python3 -m http.server 8080
+```
+
+Then open <http://localhost:8080> in a browser.
+
+## Checks
+
+Before committing changes to the data files, it's good practice to run:
+
+```
+python3 scripts/validate.py     # validates data/events.json, data/board.json, data/founders.json
+node scripts/test-main.js       # unit tests for the calendar/date logic (no dependencies)
+```
+
+`scripts/validate.py` checks: valid JSON, required fields present, dates/times in the right
+format and internally consistent, `type` is an allowed value, `id`s are unique, `repeat` blocks
+are well-formed, URLs start with `http(s)://`, and referenced photos actually exist under
+`assets/img/board/` (e-board) or `assets/img/founders/` (founders).
+
+A GitHub Actions workflow ([`.github/workflows/validate-data.yml`](.github/workflows/validate-data.yml))
+runs these checks, plus the write-ups and presentations checks, automatically on every push and
+pull request that touches the data files, so a broken JSON file will show up as a failed check
+before (or right after) it reaches `main`.
+
+## Project layout
+
+```
+index.html                       Single-page site
+.nojekyll                        Tells GitHub Pages not to run Jekyll
+assets/css/style.css             All styles (self-hosted fonts, no CDN) + theme tokens
+assets/js/main.js                Calendar, board rendering, theme toggle, and all interactivity
+assets/fonts/roboto-latin.woff2  Self-hosted Roboto variable font (weights 100–900)
+assets/fonts/LICENSE-Roboto.txt  Roboto's OFL license
+assets/img/cisa-logo.jpg         Club logo (also the favicon)
+assets/img/avatar-placeholder.svg  Placeholder avatar for board members with no photo
+assets/img/board/                 Board member photos go here
+assets/img/founders/              Founder photos go here (create it when you add one)
+data/events.json                 Schedule data — edit this to add/change events
+data/board.json                  E-board roster — edit this to add/change members
+data/founders.json               Club founders — edit this to add/change founders
+scripts/validate.py              Validates the three data files (used by CI)
+scripts/test-main.js             Node unit tests for assets/js/main.js helpers
+come-hack/                       Come Hack landing page (see come-hack/index.html)
+come-hack-presentations/         Come Hack slides site (see its README)
+writing/                         Write-ups site (see its README)
+.github/workflows/validate-data.yml  CI: runs every validator and test suite on push/PR
+```
+
+## How the page uses the data
+
+- The **Next session** card at the top, the closing "See you ..." banner, and the date tiles under
+  "Pick a Thursday" all come from `data/events.json`. Past and cancelled occurrences are left out
+  automatically, and the next six upcoming ones get a tile.
+- The **calendar** under the tiles has a Month view (click a day for details and calendar links) and
+  a List view with past events tucked away. Phones open in List view; the visitor's choice is remembered.
+- Dates listed in a `repeat.skip` block show up as "No session on ..." under the tiles.
+- Anyone in `data/board.json` whose role contains "Advisor" is listed in the "Faculty advisors" line
+  instead of getting a photo card.
+- Founders with a `title` or `org` appear in the "Where CISA's founders work now" banner.
+
+## Font & theme
+
+The site uses **Roboto**, self-hosted from [`assets/fonts/`](assets/fonts/) (OFL-licensed — see
+[`LICENSE-Roboto.txt`](assets/fonts/LICENSE-Roboto.txt)). There is no `fonts.googleapis.com` link
+and no CDN of any kind. The sub-sites share this one font file from `assets/fonts/`.
+
+A light/dark theme toggle sits at the end of the top nav. It defaults to the visitor's OS-level
+preference (`prefers-color-scheme`), and clicking it overrides that and remembers the choice in
+`localStorage` so it persists across visits and page reloads.
+
+## Links
+
+- Instagram: [@abingtoncisa](https://www.instagram.com/abingtoncisa)
+- Penn State Discover (Engage) org page: <https://psuharrisburg.campuslabs.com/engage/organization/ab-cybersecurity>
+- Come Hack: [come-hack/](come-hack/)
+- GitHub org: [psu-abington-cisa](https://github.com/psu-abington-cisa)

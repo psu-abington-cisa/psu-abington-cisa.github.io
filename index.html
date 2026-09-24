@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CISA — Cybersecurity &amp; IT Student Association | Penn State Abington</title>
+<meta name="description" content="Hands-on cybersecurity sessions every other Thursday at Penn State Abington. Any major, any level. Come Hack, e-board, dates, and how to join CISA.">
+<meta name="theme-color" content="#0b1f3a">
+<link rel="icon" href="assets/img/cisa-logo.jpg">
+<link rel="apple-touch-icon" href="assets/img/cisa-logo.jpg">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CISA — Learn to hack. The legal way.">
+<meta property="og:description" content="Hands-on cybersecurity sessions every other Thursday at Penn State Abington. Any major, any level.">
+<meta property="og:image" content="https://cisa.cybernet.rocks/assets/img/cisa-logo.jpg">
+<meta property="og:url" content="https://cisa.cybernet.rocks/">
+<meta name="twitter:card" content="summary">
+
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('cisa-theme');
+    if (t === 'light' || t === 'dark') {
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  } catch (e) { /* localStorage unavailable; fall back to OS preference via CSS */ }
+})();
+</script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <img src="assets/img/cisa-logo.jpg" alt="CISA logo" width="44" height="44">
+      <span class="brand-name">CISA</span>
+      <span class="brand-sub">Penn State Abington</span>
+    </a>
+    <nav id="site-nav" class="nav-links" aria-label="Primary">
+      <a href="#session">What we do</a>
+      <a href="#schedule">Dates</a>
+      <a href="#people">People</a>
+      <a href="#faq">FAQ</a>
+      <a href="writing/">Write-ups</a>
+      <a href="come-hack-presentations/">Presentations</a>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch to light theme">
+        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
+      </button>
+      <a class="btn btn-accent btn-sm nav-cta" href="#schedule">Come to a meeting</a>
+      <button type="button" id="menu-toggle" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section id="top" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="pill"><span class="dot" aria-hidden="true"></span><span id="hero-pill-text">Sessions every other Thursday</span></span>
+          <h1>Learn to hack.<br>The legal way.</h1>
+          <p class="lede">Hands-on cybersecurity sessions every other Thursday at Penn State Abington. Any major, any level. Come see what it’s like.</p>
+          <div class="cta-row">
+            <a class="btn btn-accent btn-lg" id="hero-cal" href="#schedule">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+              Add the next session to my calendar
+            </a>
+            <a class="btn btn-outline-light btn-lg" href="https://psuharrisburg.campuslabs.com/engage/organization/ab-cybersecurity" target="_blank" rel="noopener">Join on Discover</a>
+          </div>
+        </div>
+
+        <div class="ticket" id="ticket" aria-live="polite">
+          <div class="ticket-head">
+            <span class="ticket-kicker">Next session</span>
+            <span class="ticket-title">Come Hack</span>
+            <span class="ticket-sub">Loading the next date…</span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="quick" aria-label="At a glance">
+        <li><strong>1 hour</strong><span>Every other Thursday</span></li>
+        <li><strong>Zero</strong><span>Experience required</span></li>
+        <li><strong>Any major</strong><span>Open to all Abington students</span></li>
+        <li><strong>Laptop optional</strong><span>Workstations in the room</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="session" class="section" aria-labelledby="session-heading">
+    <div class="container split">
+      <div>
+        <p class="kicker">What a session looks like</p>
+        <h2 id="session-heading">You won’t sit through slides for an hour.</h2>
+        <ol class="steps">
+          <li><span class="step-n" aria-hidden="true">1</span><div><strong>A short guided walkthrough</strong><span>We show one real technique: how it works and why it matters.</span></div></li>
+          <li><span class="step-n" aria-hidden="true">2</span><div><strong>You try it yourself</strong><span>Hands-on on a cyber range or a lab we built, with help in the room.</span></div></li>
+          <li><span class="step-n" aria-hidden="true">3</span><div><strong>Keep going after</strong><span>Slides and write-ups go online, so you can finish or revisit at home.</span></div></li>
+        </ol>
+      </div>
+      <figure class="terminal">
+        <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span><em>come-hack · lab 01</em></div>
+<pre><code><span class="t-prompt">$</span> nmap -sC -sV 10.10.11.42
+22/tcp open  ssh     OpenSSH 8.9p1
+80/tcp open  http    Apache httpd 2.4.52
+
+<span class="t-prompt">$</span> sudo -l
+<span class="t-muted"># nothing useful. keep looking.</span>
+
+<span class="t-prompt">$</span> find / -perm -4000 -type f 2&gt;/dev/null
+/usr/bin/bash
+<span class="t-hit"># there it is.</span></code></pre>
+        <figcaption class="visually-hidden">Example terminal session from a Come Hack lab</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="come-hack" class="section section-alt" aria-labelledby="practice-heading">
+    <div class="container">
+      <div class="section-head-row">
+        <div>
+          <p class="kicker">What you’ll practice</p>
+          <h2 id="practice-heading">Break things. Then learn to defend them.</h2>
+        </div>
+        <a class="btn btn-line" href="come-hack/">Full Come Hack page →</a>
+      </div>
+      <div class="topics">
+        <div class="topic topic-offense">
+          <h3>Offense</h3>
+          <ul class="chips">
+            <li>Web app hacking</li><li>Linux &amp; Windows exploitation</li><li>Target machines</li><li>Chained attack paths</li><li>Active Directory</li><li>Enterprise security</li><li>AI-assisted ops</li>
+          </ul>
+        </div>
+        <div class="topic topic-defense">
+          <h3>Defense</h3>
+          <ul class="chips">
+            <li>Blue-team exercises</li><li>Security analysis</li><li>Phishing analysis</li><li>Log &amp; artifact analysis</li><li>Incident investigation</li><li>OSINT</li><li>Detection thinking</li>
+          </ul>
+        </div>
+      </div>
+      <p class="platforms"><strong>On real platforms:</strong>
+        <a href="https://tryhackme.com/login" target="_blank" rel="noopener">TryHackMe</a>
+        <a href="https://portal.offsec.com/sign-up/community" target="_blank" rel="noopener">OffSec Labs</a>
+        <a href="https://www.hacksmarter.org/catalog" target="_blank" rel="noopener">Hack Smarter</a>
+        <a href="https://portswigger.net/web-security/all-labs" target="_blank" rel="noopener">PortSwigger</a>
+        <span>plus labs we build ourselves.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="why-heading">
+    <div class="container">
+      <p class="kicker">Why it’s worth your lunch hour</p>
+      <h2 id="why-heading">Skills you can put on a résumé.</h2>
+      <div class="why">
+        <article class="card"><span class="card-n">01</span><h3>Real, hands-on experience</h3><p>Practice on the same platforms working security professionals train on, not just in theory.</p></article>
+        <article class="card"><span class="card-n">02</span><h3>A portfolio you can show</h3><p>Publish your solves on our <a href="writing/">write-ups site</a>: proof of skill to hand a recruiter.</p></article>
+        <article class="card"><span class="card-n">03</span><h3>People who get it</h3><p>Meet students, advisors, and alumni who are into the same things you are.</p></article>
+      </div>
+      <div class="founders" id="founders" hidden>
+        <div>
+          <p class="founders-kicker">Where CISA’s founders work now</p>
+          <p class="founders-text" id="founders-text"></p>
+        </div>
+        <p class="founders-note">Both started right here, in a student club at Abington.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="section section-alt" aria-labelledby="schedule-heading">
+    <div class="container">
+      <div class="section-head-row">
+        <div>
+          <p class="kicker">Upcoming sessions</p>
+          <h2 id="schedule-heading">Pick a Thursday. Any Thursday.</h2>
+        </div>
+        <a class="btn btn-dark" id="all-dates" href="#schedule" hidden>Add all dates to my calendar</a>
+      </div>
+      <div class="tiles" id="date-tiles">
+        <p class="empty-msg">Loading dates…</p>
+      </div>
+      <p class="note" id="skip-note">Missed one? The slides and write-ups are online, so you can catch up and still come to the next.</p>
+
+      <div class="calendar" id="calendar">
+        <div class="cal-toolbar">
+          <div class="cal-nav">
+            <button type="button" class="cal-btn" id="cal-prev" aria-label="Previous month">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+            </button>
+            <h3 class="cal-heading" id="cal-heading" aria-live="polite">Calendar</h3>
+            <button type="button" class="cal-btn" id="cal-next" aria-label="Next month">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+            </button>
+            <button type="button" class="cal-today" id="cal-today">Today</button>
+          </div>
+          <div class="view-toggle" id="view-toggle" role="group" aria-label="Calendar view">
+            <button type="button" data-view="month" aria-pressed="true">Month</button>
+            <button type="button" data-view="list" aria-pressed="false">List</button>
+          </div>
+        </div>
+        <div class="cal-wrap" id="cal-wrap">
+          <div id="cal-body"><p class="empty-msg">Loading calendar…</p></div>
+          <div id="cal-detail"></div>
+        </div>
+        <ul class="legend" aria-label="Event types">
+          <li><span class="legend-dot type-meeting"></span>Meeting</li>
+          <li><span class="legend-dot type-comehack"></span>Come Hack</li>
+          <li><span class="legend-dot type-workshop"></span>Workshop</li>
+          <li><span class="legend-dot type-social"></span>Social</li>
+          <li><span class="legend-dot type-competition"></span>Competition</li>
+          <li><span class="legend-dot type-other"></span>Other</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="people" class="section" aria-labelledby="people-heading">
+    <div class="container">
+      <p class="kicker">Faces you’ll see</p>
+      <h2 id="people-heading">Run by students, for students.</h2>
+      <div class="people" id="board-grid">
+        <p class="empty-msg">Loading e-board…</p>
+      </div>
+      <p class="note" id="advisors" hidden></p>
+    </div>
+  </section>
+
+  <section id="faq" class="section section-alt" aria-labelledby="faq-heading">
+    <div class="container faq-grid">
+      <div>
+        <p class="kicker">Before you come</p>
+        <h2 id="faq-heading">Questions students ask us.</h2>
+        <p class="faq-contact" id="faq-contact">Something else? Email <a href="mailto:mmt6227@psu.edu">Moussa Toure</a>, or message them on Teams.</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Do I need to fill out the form?</summary>
+        <p>No. It is not necessary but encouraged, so we can plan our sessions according to people's knowledge levels and interests.</p>
+        </details>
+        <details>
+          <summary>I’ve never done cybersecurity. Can I still come?</summary>
+          <p>Yes. No prior experience is required. Sessions start from the basics and there is help in the room.</p>
+        </details>
+        <details>
+          <summary>Do I need to bring a laptop?</summary>
+          <p>It helps, but it isn’t required. There are workstations available.</p>
+        </details>
+        <details>
+          <summary>Do I have to be an IT or CS major?</summary>
+          <p>No. Any currently registered Penn State Abington student can join, from any major.</p>
+        </details>
+        <details>
+          <summary>Is hacking legal?</summary>
+          <p>The way we do it, yes. We only practice on systems we own, training platforms, or systems we have permission to test. Responsible skill-building, never unauthorized access.</p>
+        </details>
+        <details>
+          <summary>How do I join?</summary>
+          <p>Join CISA on <a href="https://psuharrisburg.campuslabs.com/engage/organization/ab-cybersecurity" target="_blank" rel="noopener">Penn State Discover</a> to RSVP and get event reminders, then come to the next session.</p>
+        </details>
+      </div>
+    </div>
+    <div class="container interest">
+      <h3>Tell us what you want to learn</h3>
+      <iframe title="CISA interest form" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=RY30fNs9iUOpwcEVUm61LgzhWW1ZzRRPplxZP9-_dMRUNFpZOVJaMk9BUERJSVA3TEFJM1Q0QTBPWS4u&amp;embed=true" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="container cta-inner">
+      <div>
+        <h2 id="cta-title">See you at the next session.</h2>
+        <p id="cta-meta">Every other Thursday · Bring a friend.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-light btn-lg" id="cta-cal" href="#schedule">Add to my calendar</a>
+        <a class="btn btn-outline-light btn-lg" href="https://www.instagram.com/abingtoncisa" target="_blank" rel="noopener">Follow @abingtoncisa</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/img/cisa-logo.jpg" alt="" width="44" height="44">
+      <div>
+        <p>Cybersecurity &amp; IT Student Association · Penn State Abington</p>
+        <p class="footer-fine">A student organization website. Not an official publication of Penn State University. &copy; <span id="footer-year">2026</span> CISA.</p>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Elsewhere">
+      <a href="https://www.instagram.com/abingtoncisa" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://psuharrisburg.campuslabs.com/engage/organization/ab-cybersecurity" target="_blank" rel="noopener">Discover</a>
+      <a href="writing/">Write-ups</a>
+      <a href="come-hack-presentations/">Presentations</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

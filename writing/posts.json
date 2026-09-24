@@ -1,0 +1,6 @@
+{
+  "posts": [
+    { "slug": "how-to-write-a-ctf-writeup", "file": "posts/how-to-write-a-ctf-writeup.md" },
+    { "slug": "lumon-writeup", "file": "posts/lumon-writeup.md" }
+  ]
+}

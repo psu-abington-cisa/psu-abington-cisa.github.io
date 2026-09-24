@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CISA Write-ups</title>
+<meta name="description" content="CTF write-ups, lab notes, and guides from the Cybersecurity &amp; IT Student Association at Penn State Abington.">
+<meta name="theme-color" content="#070e1c">
+<link rel="canonical" href="https://cisa.cybernet.rocks/writing/">
+<!-- Static Open Graph card: social crawlers do not run JS, so every write-up
+     link previews with this site-level card. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CISA Write-ups">
+<meta property="og:title" content="CISA Write-ups — Penn State Abington">
+<meta property="og:description" content="CTF write-ups, lab notes, and guides from the Cybersecurity &amp; IT Student Association at Penn State Abington.">
+<meta property="og:url" content="https://cisa.cybernet.rocks/writing/">
+<meta property="og:image" content="https://cisa.cybernet.rocks/writing/img/cisa-logo.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CISA Write-ups — Penn State Abington">
+<meta name="twitter:description" content="CTF write-ups, lab notes, and guides from the Cybersecurity &amp; IT Student Association at Penn State Abington.">
+<meta name="twitter:image" content="https://cisa.cybernet.rocks/writing/img/cisa-logo.jpg">
+<link rel="alternate" type="application/atom+xml" title="CISA Write-ups" href="feed.xml">
+<link rel="icon" href="img/cisa-logo.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="img/cisa-logo.jpg">
+<link rel="stylesheet" href="styles.css?v=2026092301">
+<script src="theme.js?v=2026092301"></script>
+<!-- Vendored, pinned copies (see vendor/): no third-party requests. Deferred
+     scripts run in document order. MathJax is not listed here on purpose:
+     app.js loads it on demand the first time a write-up contains math. -->
+<script defer src="vendor/marked.min.js"></script>
+<script defer src="vendor/purify.min.js"></script>
+<script defer src="app.js?v=2026092301"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../">
+      <img src="img/cisa-logo.jpg" alt="CISA logo" width="44" height="44">
+      <span class="brand-name">CISA</span>
+      <span class="brand-sub">Write-ups</span>
+    </a>
+    <nav id="siteNav" class="nav-links" aria-label="Primary">
+      <a class="active" href="./" aria-current="page">Write-ups</a>
+      <a href="../">Main site</a>
+      <a href="../#schedule">Dates</a>
+      <a href="feed.xml">Feed</a>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch to light theme">
+        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
+      </button>
+      <a class="btn btn-accent btn-sm nav-cta" href="../#schedule">Come to a meeting</a>
+      <button type="button" id="navToggle" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="siteNav">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Index-only banner; app.js hides it while a write-up is open. -->
+<section id="hero" class="hero">
+  <div class="container">
+    <span class="hero-pill"><span class="dot" aria-hidden="true"></span>CTF write-ups &middot; lab notes &middot; guides</span>
+    <h1>What we broke,<br>and how.</h1>
+    <p class="lede">CTF write-ups, lab notes, and guides from the Cybersecurity &amp; IT Student Association at Penn State Abington.</p>
+  </div>
+</section>
+
+<div class="container layout">
+
+  <aside id="sidemenu" aria-label="Page index">
+    <ul id="page-index">
+      <li><span class="sh">On this page</span></li>
+      <li><a href="#writeups">Write-ups</a></li>
+    </ul>
+    <ul id="tag-filter"></ul>
+    <ul class="elsewhere">
+      <li><span class="sh">Elsewhere</span></li>
+      <li><a href="../">Main site</a></li>
+      <li><a href="../#schedule">Schedule</a></li>
+      <li><a href="https://www.instagram.com/abingtoncisa">Instagram</a></li>
+      <li><a href="https://psuharrisburg.campuslabs.com/engage/organization/ab-cybersecurity">Engage</a></li>
+      <li><a href="feed.xml">Feed</a></li>
+    </ul>
+  </aside>
+
+  <main id="main">
+
+    <section id="index-view">
+      <div class="sw-head">
+        <div>
+          <p class="kicker">The archive</p>
+          <h2 id="writeups">Write-ups</h2>
+        </div>
+        <span id="post-count" class="tag"></span>
+      </div>
+      <input id="search" type="search" placeholder="Search write-ups&hellip;" aria-label="Search write-ups" autocomplete="off" spellcheck="false">
+      <div id="post-list" aria-live="polite"></div>
+    </section>
+
+    <article id="post-view" hidden>
+      <div id="post-content"></div>
+      <div class="action-row" id="post-actions"><a class="all-posts" href="#writeups">&larr; All write-ups</a></div>
+    </article>
+
+  </main>
+
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="img/cisa-logo.jpg" alt="" width="44" height="44">
+      <div>
+        <p>Cybersecurity &amp; IT Student Association &middot; Penn State Abington</p>
+        <p class="footer-fine">A student organization website. Not an official publication of Penn State University. &copy; 2026 CISA.</p>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Elsewhere">
+      <a href="../">Main site</a>
+      <a href="https://www.instagram.com/abingtoncisa">Instagram</a>
+      <a href="https://psuharrisburg.campuslabs.com/engage/organization/ab-cybersecurity">Engage</a>
+      <a href="feed.xml">Feed</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

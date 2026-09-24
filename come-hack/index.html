@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Come Hack — a recurring hands-on cybersecurity learning meeting covering offensive security, defensive security, OSINT, and security analysis.">
+  <meta name="theme-color" content="#0b1f3a">
+  <title>Come Hack — CISA · Penn State Abington</title>
+  <link rel="icon" href="cisa.jpg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Come Hack — hands-on cybersecurity at Penn State Abington">
+  <meta property="og:description" content="A recurring hands-on cybersecurity meeting covering offensive security, defensive security, OSINT, and security analysis. Run by CISA at Penn State Abington.">
+  <meta property="og:image" content="https://cisa.cybernet.rocks/come-hack/cisa.jpg">
+  <meta property="og:url" content="https://cisa.cybernet.rocks/come-hack/">
+  <meta name="twitter:card" content="summary">
+
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('cisa-theme');
+      if (t === 'light' || t === 'dark') {
+        document.documentElement.setAttribute('data-theme', t);
+      }
+    } catch (e) { /* localStorage unavailable; fall back to OS preference via CSS */ }
+  })();
+  </script>
+  <link rel="preload" href="../assets/fonts/roboto-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../">
+        <img src="cisa.jpg" alt="Cybersecurity &amp; IT Student Association — Penn State Abington" width="44" height="44">
+        <span class="brand-name">COME HACK</span>
+        <span class="brand-sub">CISA · Penn State Abington</span>
+      </a>
+      <nav id="site-nav" class="nav-links" aria-label="Primary">
+        <a href="#meeting">Meeting</a>
+        <a href="#what">What we do</a>
+        <a href="#ranges">Cyber ranges</a>
+        <a href="#who">Who it’s for</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch to light theme">
+          <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+          <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
+        </button>
+        <a class="btn btn-accent btn-sm nav-cta"
+           href="https://psuharrisburg.campuslabs.com/engage/organization/ab-cybersecurity"
+           target="_blank"
+           rel="noopener noreferrer">Join on Discover</a>
+        <button type="button" id="menu-toggle" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="pill"><span class="dot" aria-hidden="true"></span>Presented by Moussa Toure</span>
+
+          <h1>
+            COME
+            <span>HACK</span>
+          </h1>
+
+          <p class="lede">
+            A recurring, hands-on cybersecurity meeting focused on learning how
+            real systems are attacked, defended, investigated, and analyzed.
+            Bring your curiosity, your laptop, and a willingness to break things
+            in a controlled environment.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-accent btn-lg"
+               href="https://psuharrisburg.campuslabs.com/engage/organization/ab-cybersecurity"
+               target="_blank"
+               rel="noopener noreferrer">Join on Discover</a>
+            <a class="btn btn-outline-light btn-lg" href="#what">What we do</a>
+          </div>
+        </div>
+
+        <section id="meeting" class="ticket" aria-labelledby="meeting-heading">
+          <div class="ticket-head">
+            <span class="ticket-kicker">Come Hack</span>
+            <h2 class="ticket-title" id="meeting-heading">Meeting</h2>
+          </div>
+          <!-- When/Where are filled in from ../data/events.json (next "come-hack"
+               occurrence); the text below is the fallback if that fails. -->
+          <dl class="ticket-facts">
+            <div>
+              <dt>When</dt>
+              <dd class="fact-main" id="meeting-when">Every other Thursday</dd>
+              <dd class="fact-sub" id="meeting-when-sub">See the schedule for dates and times</dd>
+            </div>
+            <div>
+              <dt>Where</dt>
+              <dd class="fact-main" id="meeting-where">Woodland Building 132A</dd>
+              <dd class="fact-sub">In person</dd>
+            </div>
+            <div>
+              <dt>Format</dt>
+              <dd class="fact-main">Hands-on</dd>
+              <dd class="fact-sub">Labs + discussion + practice</dd>
+            </div>
+          </dl>
+          <p class="ticket-foot"><a class="btn btn-accent btn-sm" href="../#schedule">All dates &amp; calendar links</a></p>
+        </section>
+      </div>
+    </section>
+
+    <section id="what" class="section" aria-labelledby="what-heading">
+      <div class="container">
+        <h2 id="what-heading">What We Do</h2>
+
+        <p class="section-lede">
+          The goal is to move beyond simply reading about security. Each
+          meeting combines guided learning with practical exercises using
+          cyber ranges and custom-built labs.
+        </p>
+
+        <div class="topics">
+          <div class="topic topic-offense">
+            <h3>Offensive Security</h3>
+            <ul class="chips">
+              <li>Web application hacking</li>
+              <li>Linux system exploitation</li>
+              <li>Windows system exploitation</li>
+              <li>Standalone target machines</li>
+              <li>Chained attack paths</li>
+              <li>Active Directory environments</li>
+              <li>Enterprise Security</li>
+              <li>AI assisted operations</li>
+            </ul>
+          </div>
+
+          <div class="topic topic-defense">
+            <h3>Defensive &amp; Analysis</h3>
+            <ul class="chips">
+              <li>Blue-team exercises</li>
+              <li>Security analysis</li>
+              <li>Phishing Analysis</li>
+              <li>Log and artifact analysis</li>
+              <li>Incident investigation concepts</li>
+              <li>OSINT techniques</li>
+              <li>Detection and defensive thinking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ranges" class="section section-alt" aria-labelledby="ranges-heading">
+      <div class="container">
+        <h2 id="ranges-heading">Cyber Ranges</h2>
+
+        <p class="section-lede">
+          Depending on the topic, we will work through public cyber ranges,
+          intentionally vulnerable systems, and custom-made labs.
+        </p>
+
+        <div class="ranges">
+          <a class="range" href="https://tryhackme.com/login" target="_blank" rel="noopener noreferrer">TryHackMe</a>
+          <a class="range" href="https://portal.offsec.com/sign-up/community" target="_blank" rel="noopener noreferrer">OffSec Labs</a>
+          <a class="range" href="https://www.hacksmarter.org/catalog" target="_blank" rel="noopener noreferrer">Hack Smarter</a>
+          <a class="range" href="https://portswigger.net/web-security/all-labs" target="_blank" rel="noopener noreferrer">PortSwigger</a>
+          <span class="range">Custom Labs</span>
+          <span class="range">More</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="who" class="section">
+      <div class="container cards">
+        <article class="card" aria-labelledby="who-heading">
+          <h2 id="who-heading">Who Is It For?</h2>
+
+          <p>
+            Anyone interested in cybersecurity, offensive security, defensive
+            security, penetration testing, security research, OSINT, or IT in
+            general.
+          </p>
+
+          <p>
+            You do not need to be an expert. The sessions are intended to give
+            people a place to learn, experiment, ask questions, and practice
+            security skills.
+          </p>
+        </article>
+
+        <article class="card" aria-labelledby="bring-heading">
+          <h2 id="bring-heading">What To Bring</h2>
+
+          <p>
+            <strong>A laptop is recommended, but not mandatory.</strong>
+            <br>
+            Workstations will be available for attendees. If you bring a laptop,
+            you can use it to access browser-based labs and, when appropriate,
+            local virtual machines or other security tooling.
+          </p>
+        </article>
+
+        <article class="card" aria-labelledby="rules-heading">
+          <h2 id="rules-heading">Ground Rules</h2>
+
+          <p>
+            Everything we practice should be done against systems we own,
+            systems explicitly provided for training, or systems for which we
+            have permission to test.
+          </p>
+
+          <p>
+            The objective is to develop practical security skills responsibly —
+            not to attack real-world systems without authorization.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading">Questions / Updates</h2>
+
+        <p class="section-lede">
+          For questions about the meeting, reach out to:
+        </p>
+
+        <!-- Filled in from ../data/board.json (members with "contact": true);
+             the markup below is the fallback if that fails. -->
+        <div class="people" id="contact-people">
+          <div class="person">
+            <span class="avatar" aria-hidden="true">JM</span>
+            <div>
+              <h3>Jason Mathew</h3>
+              <p class="person-role">President</p>
+              <p>
+                <a href="mailto:jam8654@psu.edu">jam8654@psu.edu</a><br>
+                Available on Microsoft Teams &amp; Outlook
+              </p>
+            </div>
+          </div>
+
+          <div class="person">
+            <span class="avatar" aria-hidden="true">MT</span>
+            <div>
+              <h3>Moussa Toure</h3>
+              <p class="person-role">Event Planner</p>
+              <p>
+                <a href="mailto:mmt6227@psu.edu">mmt6227@psu.edu</a><br>
+                Available on Microsoft Teams &amp; Outlook
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="contact-cta">
+          <a class="btn btn-accent btn-lg"
+             href="https://psuharrisburg.campuslabs.com/engage/organization/ab-cybersecurity"
+             target="_blank"
+             rel="noopener noreferrer">
+            Join on Discover
+          </a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-brand">
+      <img src="cisa.jpg" alt="" width="44" height="44">
+      <p>COME HACK &mdash; Hands-on cybersecurity learning &amp; practice.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
