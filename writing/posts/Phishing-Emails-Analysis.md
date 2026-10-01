@@ -1,6 +1,6 @@
 ---
 title: "Phishing Emails Analysis"
-date: "October 1st, 2026"
+date: "October 01, 2026"
 author: "Moussa Toure"
 reading: "2 min read"
 description: "Handout for phishing analysis workshop."
