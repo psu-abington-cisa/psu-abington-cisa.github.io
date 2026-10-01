@@ -1,3 +1,12 @@
+---
+title: "Phishing Emails Analysis"
+date: "October 1st, 2026"
+author: "Moussa Toure"
+reading: "2 min read"
+description: "Handout for phishing analysis workshop."
+tags: guide
+---
+
 ## Phishhound
 
 Domain
@@ -76,3 +85,13 @@ ____
 ```
 
 ```
+----
+## Screenshots to look at
+
+![image 1](Attachments/screen-2-1.png)
+
+![image 2](Attachments/screen-2-2.png)
+
+![image 3](Attachments/screen-2-3.png)
+
+![image 4](Attachments/screen-2-4.png)
