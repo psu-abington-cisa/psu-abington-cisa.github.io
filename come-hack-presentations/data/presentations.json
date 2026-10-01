@@ -7,6 +7,14 @@
       "session": 1,
       "pdf": "presentations/come-hack-09-17-2026.pdf",
       "kaltura": ""
+    },
+    {
+  "id": "2026-10-01-web-hacking",
+  "title": "Phishing Analysis",
+  "date": "2026-10-01",
+  "session": 2,
+  "pdf": "presentations/come-hack-10-01-2026.pdf",
+  "kaltura": ""
     }
   ]
 }
