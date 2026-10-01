@@ -4,7 +4,7 @@ date: "October 01, 2026"
 author: "Moussa Toure"
 reading: "2 min read"
 description: "Handout for phishing analysis workshop."
-tags: guide
+tags: guide, blue team
 ---
 
 ## Phishhound
