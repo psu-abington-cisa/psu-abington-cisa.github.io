@@ -45,7 +45,9 @@ ____
 [Security bookmark](https://raw.githubusercontent.com/MalwareCube/SOC101/refs/heads/main/resources/bookmarks/soc_bookmarks.html)
 
 [urlscan.io](https://usrscan.io)
+
 [Virus Total](https://virustotal.com)
+
 [Cisco Talos](https://talosintelligence.com)
 
 ----
