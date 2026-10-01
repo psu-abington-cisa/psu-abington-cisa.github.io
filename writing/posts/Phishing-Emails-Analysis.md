@@ -42,9 +42,9 @@ Phishhound-Demo-2026
 ____
 ## Links
 
-[Security bookmark](https://raw.githubusercontent.com/MalwareCube/SOC101/refs/heads/main/resources/bookmarks/soc_bookmarks.html)
+You can download and add this [Security bookmark](https://raw.githubusercontent.com/MalwareCube/SOC101/refs/heads/main/resources/bookmarks/soc_bookmarks.html) to your browser.
 
-[urlscan.io](https://usrscan.io)
+[urlscan.io](https://urlscan.io)
 
 [Virus Total](https://virustotal.com)
 
