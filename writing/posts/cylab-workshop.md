@@ -24,7 +24,7 @@ Sign up/log in and enter the code below into the classrooms area as follows:
 ## Invite Code:
 
 ```
-CE2fv----
+CE2fvGEUx
 ```
 
 >code to be updated
