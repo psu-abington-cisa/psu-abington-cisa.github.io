@@ -14,7 +14,8 @@ For this session we are going over some challenges on [CyLab](https://learn.cyla
 ![](Attachments/Pasted%20image%2020261001224058.png)
 
 Sign up/log in and enter the code below into the classrooms area as follows:
- ![](Attachments/Pasted%20image%2020261001231003.png)
+
+![](Attachments/Pasted%20image%2020261001231003.png)
  
 ![](Attachments/Pasted%20image%2020261001231035.png)
 
@@ -41,7 +42,9 @@ ____
 The basics of [DevTools](https://medium.com/swlh/the-basics-of-chrome-devtools-4d69a102a699) to help with Web Application exploitation.
 
 You can find all kinds of payloads on [Payloads All the Things](https://swisskyrepo.github.io/PayloadsAllTheThings/)
+
 You can find all kinds of interesting stuff in [Moussa's sloped notes](https://github.com/b-3llum/pentest-notes)
+
 You can always rely on [THE FINAL BOSS](https://www.google.com) for more help
 
 ----
