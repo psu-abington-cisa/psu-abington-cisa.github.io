@@ -5,8 +5,19 @@
   <link href="https://cisa.cybernet.rocks/writing/"/>
   <link rel="self" type="application/atom+xml" href="https://cisa.cybernet.rocks/writing/feed.xml"/>
   <id>https://cisa.cybernet.rocks/writing/</id>
-  <updated>2026-10-01T00:00:00Z</updated>
+  <updated>2026-10-15T00:00:00Z</updated>
   <author><name>CISA @ Penn State Abington</name></author>
+  <entry>
+    <title>CyLabs Workshop</title>
+    <link href="https://cisa.cybernet.rocks/writing/#cylab-workshop"/>
+    <id>https://cisa.cybernet.rocks/writing/#cylab-workshop</id>
+    <updated>2026-10-15T00:00:00Z</updated>
+    <author><name>Moussa Toure</name></author>
+    <category term="ctf"/>
+    <category term="linux"/>
+    <category term="privesc"/>
+    <summary>Hands on practice on a free cybersecurity education program created by security experts at Carnegie Mellon University built around hands-on Capture the Flag challenges.</summary>
+  </entry>
   <entry>
     <title>Phishing Emails Analysis</title>
     <link href="https://cisa.cybernet.rocks/writing/#phishing-emails-analysis"/>
