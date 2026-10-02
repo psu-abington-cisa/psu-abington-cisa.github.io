@@ -2,6 +2,7 @@
   "posts": [
     { "slug": "how-to-write-a-ctf-writeup", "file": "posts/how-to-write-a-ctf-writeup.md" },
     { "slug": "lumon-writeup", "file": "posts/lumon-writeup.md" },
-    { "slug": "phishing-emails-analysis", "file": "posts/Phishing-Emails-Analysis.md" }
+    { "slug": "phishing-emails-analysis", "file": "posts/Phishing-Emails-Analysis.md" },
+    { "slug": "cylab-workshop", "file": "posts/cylab-workshop.md" }
   ]
 }
