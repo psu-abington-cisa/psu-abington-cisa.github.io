@@ -34,7 +34,26 @@
       "tags": [
         "Hands-on",
         "Biweekly"
-      ]
+        ]
+      },
+    {
+    "id": "2026-10-29-cybersecurity-beyond-the-classroom",
+    "title": "Cybersecurity Beyond the Classroom",
+    "date": "2026-10-29",
+    "start": "12:15",
+    "end": "13:15",
+    "location": "Woodland Building 132A",
+    "type": "meeting",
+    "summary": "Natalie Sylvester, a former CISA treasurer, will share her experience and insights on cybersecurity beyond the classroom.",
+    "description": "Cybersecurity Beyond the Classroom: Join Natalie Sylvester, a former CISA treasurer, for a discussion on cybersecurity in the real world. Learn about her experiences, career insights, and how cybersecurity concepts extend beyond the classroom into professional environments.",
+    "url": "https://www.linkedin.com/in/natalie-sylvester/",
+    "tags": [
+      "Real world",
+      "Guest speaker",
+      "Cybersecurity",
+      "Career"
+      ],
+    "featured": true
     }
   ]
 }
