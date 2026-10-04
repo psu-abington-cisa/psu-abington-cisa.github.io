@@ -88,7 +88,7 @@
       <ul class="quick" aria-label="At a glance">
         <li><strong>2 projects</strong><span>CISA Linux and CISA Rice</span></li>
         <li><strong>30+ tools</strong><span>Ready to use, grouped by topic</span></li>
-        <li><strong>5 themes</strong><span>One command to switch</span></li>
+        <li><strong>9 themes</strong><span>One command to switch</span></li>
         <li><strong>$0</strong><span>Free and open source</span></li>
       </ul>
     </div>
@@ -141,11 +141,11 @@
       <div class="section-head-row">
         <div>
           <p class="kicker">CISA Rice</p>
-          <h2 id="rice-heading">Make it yours in one command.</h2>
+          <h2 id="rice-heading">A riced desktop in one command.</h2>
         </div>
         <a class="btn btn-line" href="https://github.com/psu-abington-cisa/cisa-rice" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
-      <p class="res-lede res-lede-wide">After installing CISA Linux, open the terminal and paste this. Pick a theme, and it changes your colors, wallpaper, icons, taskbar and terminal in one go. Switch any time from <strong>Start → CISA Themes</strong>, or undo with <code>--restore</code>.</p>
+      <p class="res-lede res-lede-wide">After installing CISA Linux, paste this into the terminal and pick a theme. You get a fully riced <strong>Hyprland</strong> desktop, which you choose on the login screen, and the beginner-friendly Plasma desktop changes to match. Switch themes any time with <kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>, or undo everything with <code>--restore</code>.</p>
 
       <figure class="terminal res-cmd">
         <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span><em>Konsole</em></div>
@@ -156,14 +156,32 @@
         <figcaption class="visually-hidden">Install command for CISA Rice</figcaption>
       </figure>
 
-      <ul class="res-themes" aria-label="Themes">
-        <li><figure><img src="img/theme-cisa-navy.jpg" alt="CISA Navy theme: navy desktop with the CISA badge" width="960" height="600" loading="lazy"><figcaption><strong>CISA Navy</strong>Official club colors</figcaption></figure></li>
-        <li><figure><img src="img/theme-green-phosphor.jpg" alt="Green Phosphor theme: black desktop with falling green code" width="960" height="600" loading="lazy"><figcaption><strong>Green Phosphor</strong>Hacker-movie terminal</figcaption></figure></li>
-        <li><figure><img src="img/theme-midnight-purple.jpg" alt="Midnight Purple theme: purple desktop with neon waves and a centered taskbar" width="960" height="600" loading="lazy"><figcaption><strong>Midnight Purple</strong>Late-night CTF vibes</figcaption></figure></li>
-        <li><figure><img src="img/theme-arctic-frost.jpg" alt="Arctic Frost theme: slate desktop with blue mountains" width="960" height="600" loading="lazy"><figcaption><strong>Arctic Frost</strong>Calm slate and ice blue</figcaption></figure></li>
-        <li><figure><img src="img/theme-daylight.jpg" alt="Daylight theme: light desktop like Windows 11" width="960" height="600" loading="lazy"><figcaption><strong>Daylight</strong>Light, like Windows 11</figcaption></figure></li>
+      <ul class="res-themes" aria-label="Nine themes">
+        <li><figure><img src="img/theme-cisa-navy.jpg" alt="CISA Navy theme in Hyprland: navy desktop, system info with the CISA badge, clock and calendar" width="960" height="600" loading="lazy"><figcaption><strong>CISA Navy</strong>Club colors and the badge</figcaption></figure></li>
+        <li><figure><img src="img/theme-signal.jpg" alt="Signal theme: navy with signal-orange accents and the ci mark" width="960" height="600" loading="lazy"><figcaption><strong>Signal</strong>Navy and signal orange</figcaption></figure></li>
+        <li><figure><img src="img/theme-reef.jpg" alt="Reef theme: deep teal with coral accents" width="960" height="600" loading="lazy"><figcaption><strong>Reef</strong>Deep teal and coral</figcaption></figure></li>
+        <li><figure><img src="img/theme-volt.jpg" alt="Volt theme: deep violet with chartreuse accents" width="960" height="600" loading="lazy"><figcaption><strong>Volt</strong>Violet and chartreuse</figcaption></figure></li>
+        <li><figure><img src="img/theme-daylight.jpg" alt="Daylight theme: light blue-white desktop with navy text and orange accents" width="960" height="600" loading="lazy"><figcaption><strong>Daylight</strong>Light, blue and orange</figcaption></figure></li>
+        <li><figure><img src="img/theme-oled.jpg" alt="OLED theme: pure black desktop with a field of dim marks and one lit" width="960" height="600" loading="lazy"><figcaption><strong>OLED</strong>True black, no glow</figcaption></figure></li>
+        <li><figure><img src="img/theme-glass.jpg" alt="Glass theme: frosted transparent windows over a colorful aurora" width="960" height="600" loading="lazy"><figcaption><strong>Glass</strong>Glossy frosted glass</figcaption></figure></li>
+        <li><figure><img src="img/theme-blueprint.jpg" alt="Blueprint theme: monochrome desktop with the CISA shield drawn as an engineering drawing" width="960" height="600" loading="lazy"><figcaption><strong>Blueprint</strong>Monochrome engineering drawing</figcaption></figure></li>
+        <li><figure><img src="img/theme-phosphor.jpg" alt="Phosphor theme: black and green CRT terminal look" width="960" height="600" loading="lazy"><figcaption><strong>Phosphor</strong>CRT terminal green</figcaption></figure></li>
       </ul>
-      <p class="note">Bonus: the terminal prompt shows your VPN IP when you’re connected to TryHackMe or OffSec, so it’s ready to paste into a reverse shell.</p>
+
+      <div class="split res-split res-rice-more">
+        <figure class="res-shot">
+          <img src="img/rice-ui.jpg" alt="The power menu with five large buttons, and the lock screen with a big clock and password field" width="1920" height="600" loading="lazy">
+          <figcaption>Power menu and lock screen. Every part of the desktop follows the theme.</figcaption>
+        </figure>
+        <div>
+          <ul class="res-checks">
+            <li><strong>Lab VPN in the top bar.</strong> It lights up with your TryHackMe or OffSec IP; click it to copy the IP for <code>LHOST</code>.</li>
+            <li><strong>Feels like Windows.</strong> <kbd>Super</kbd> opens apps, plus <kbd>Alt</kbd>+<kbd>F4</kbd>, <kbd>Alt</kbd>+<kbd>Tab</kbd>, <kbd>Win</kbd>+<kbd>L</kbd>, <kbd>Win</kbd>+<kbd>V</kbd> clipboard and <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> screenshots.</li>
+            <li><strong>Lost?</strong> <kbd>Super</kbd>+<kbd>/</kbd> shows every shortcut on screen. <kbd>Super</kbd>+<kbd>D</kbd> opens the dashboard.</li>
+            <li><strong>Only from Debian.</strong> Hyprland comes from Debian 13’s official backports, and the CISA logo is a sharp vector at any size.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -184,8 +202,8 @@
         </a>
         <a class="card res-repo" href="https://github.com/psu-abington-cisa/cisa-rice" target="_blank" rel="noopener">
           <span class="res-repo-name">cisa-rice</span>
-          <p>Desktop themes for KDE Plasma. Add your own theme by writing a single file of colors.</p>
-          <span class="res-repo-meta">Shell · KDE Plasma 6</span>
+          <p>A riced Hyprland desktop with nine themes, plus matching Plasma. Add your own theme by writing a single file of colors.</p>
+          <span class="res-repo-meta">Hyprland · Python · Shell</span>
         </a>
         <a class="card res-repo" href="https://github.com/psu-abington-cisa/collatz-brother-webapp" target="_blank" rel="noopener">
           <span class="res-repo-name">collatz-brother-webapp</span>

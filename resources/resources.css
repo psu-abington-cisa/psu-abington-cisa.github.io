@@ -107,6 +107,9 @@ kbd {
 .res-themes figcaption { margin-top: 12px; display: flex; flex-direction: column; font-size: 14px; color: var(--body); }
 .res-themes figcaption strong { font-size: 17px; color: var(--ink); }
 
+.res-rice-more { margin-top: clamp(40px, 6vw, 64px); align-items: center; }
+.res-rice-more .res-checks { margin-top: 0; }
+
 /* GitHub repo cards */
 .res-repos { margin-top: 0; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
 .res-repo { text-decoration: none; color: inherit; transition: border-color .15s ease, transform .15s ease; }
