@@ -162,7 +162,9 @@ assets/css/style.css             All styles (self-hosted fonts, no CDN) + theme 
 assets/js/main.js                Calendar, board rendering, theme toggle, and all interactivity
 assets/fonts/roboto-latin.woff2  Self-hosted Roboto variable font (weights 100–900)
 assets/fonts/LICENSE-Roboto.txt  Roboto's OFL license
-assets/img/cisa-logo.jpg         Club logo (also the favicon)
+assets/img/cisa-logo.svg         Club logo, vector (header, footer, favicon on every page)
+assets/img/cisa-logo-180.png     Apple touch icon (PNG, made from the SVG)
+assets/img/cisa-logo-og.png      Social share image (PNG, made from the SVG)
 assets/img/avatar-placeholder.svg  Placeholder avatar for board members with no photo
 assets/img/board/                 Board member photos go here
 assets/img/founders/              Founder photos go here (create it when you add one)

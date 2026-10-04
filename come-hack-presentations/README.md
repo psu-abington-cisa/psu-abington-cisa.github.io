@@ -90,7 +90,7 @@ view.html                        PDF viewer + recording link (view.html?id=...)
 assets/css/style.css             Styles (same tokens/components as the CISA site)
 assets/js/app.js                 Loads the JSON and renders both pages
 (no assets/fonts/)               Roboto is shared from the repo root: ../assets/fonts/roboto-latin.woff2 (OFL)
-assets/img/cisa-logo.jpg         Club logo (also the favicon)
+../assets/img/cisa-logo.svg      Club logo (shared with the main site)
 data/presentations.json          The list of presentations. Edit this one.
 presentations/                   The PDFs
 scripts/validate.py              Validates data/presentations.json (used by CI)
