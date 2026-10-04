@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resources — CISA · Penn State Abington</title>
+<meta name="description" content="Free tools from CISA at Penn State Abington: CISA Linux, a beginner-friendly security distro, CISA Rice desktop themes, and everything on our GitHub.">
+<meta name="theme-color" content="#0b1f3a">
+<link rel="icon" href="../assets/img/cisa-logo.jpg">
+<link rel="apple-touch-icon" href="../assets/img/cisa-logo.jpg">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CISA Resources — tools we build and share">
+<meta property="og:description" content="CISA Linux, CISA Rice desktop themes, and the rest of our open-source projects on GitHub.">
+<meta property="og:image" content="https://cisa.cybernet.rocks/resources/img/cisa-linux-desktop.jpg">
+<meta property="og:url" content="https://cisa.cybernet.rocks/resources/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('cisa-theme');
+    if (t === 'light' || t === 'dark') {
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  } catch (e) { /* localStorage unavailable; fall back to OS preference via CSS */ }
+})();
+</script>
+<link rel="preload" href="../assets/fonts/roboto-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="resources.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../">
+      <img src="../assets/img/cisa-logo.jpg" alt="CISA logo" width="44" height="44">
+      <span class="brand-name">CISA</span>
+      <span class="brand-sub">Penn State Abington</span>
+    </a>
+    <nav id="site-nav" class="nav-links" aria-label="Primary">
+      <a href="../#session">What we do</a>
+      <a href="../#schedule">Dates</a>
+      <a href="../#people">People</a>
+      <a href="../#faq">FAQ</a>
+      <a href="../come-hack/">Come Hack</a>
+      <a href="../writing/">Write-ups</a>
+      <a href="../come-hack-presentations/">Presentations</a>
+      <a class="active" href="./" aria-current="page">Resources</a>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch to light theme">
+        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
+      </button>
+      <a class="btn btn-accent btn-sm nav-cta" href="../#schedule">Come to a meeting</a>
+      <button type="button" id="menu-toggle" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section id="top" class="hero res-hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="pill"><span class="dot" aria-hidden="true"></span>Open source · Free for everyone</span>
+          <h1>Tools we build.<br>Yours to use.</h1>
+          <p class="lede">A Linux system set up for learning security, one-command desktop themes, and the code behind our labs and this site. Everything is on GitHub.</p>
+          <div class="cta-row">
+            <a class="btn btn-accent btn-lg" href="https://github.com/psu-abington-cisa" target="_blank" rel="noopener">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+              CISA on GitHub
+            </a>
+            <a class="btn btn-outline-light btn-lg" href="#cisa-linux">See what’s here</a>
+          </div>
+        </div>
+        <figure class="res-shot res-shot-hero">
+          <img src="img/cisa-linux-desktop.jpg" alt="The CISA Linux desktop: a Windows-style taskbar with the CISA badge as the Start button, and the Welcome page open in Firefox" width="1280" height="800">
+        </figure>
+      </div>
+
+      <ul class="quick" aria-label="At a glance">
+        <li><strong>2 projects</strong><span>CISA Linux and CISA Rice</span></li>
+        <li><strong>30+ tools</strong><span>Ready to use, grouped by topic</span></li>
+        <li><strong>5 themes</strong><span>One command to switch</span></li>
+        <li><strong>$0</strong><span>Free and open source</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cisa-linux" class="section" aria-labelledby="linux-heading">
+    <div class="container split res-split">
+      <div>
+        <p class="kicker">CISA Linux</p>
+        <h2 id="linux-heading">A hacking lab that feels like home.</h2>
+        <p class="res-lede">A Linux system for students who’ve only ever used Windows. The taskbar, Start menu and shortcuts work the way you expect, and the security tools from our sessions are already installed.</p>
+        <ul class="res-checks">
+          <li><strong>Feels like Windows.</strong> Start menu, taskbar and system tray, plus <kbd>Win</kbd>+<kbd>E</kbd>, <kbd>Win</kbd>+<kbd>L</kbd> and Print Screen.</li>
+          <li><strong>Tools grouped by topic.</strong> Recon, Web, Passwords, Exploitation, Forensics and Reverse Engineering, each with a short explanation.</li>
+          <li><strong>Ready for the labs.</strong> Import your TryHackMe or OffSec VPN file in two clicks.</li>
+          <li><strong>Stable.</strong> Built on Debian 13 with Secure Boot support. Run it from USB, in a VM, or next to Windows.</li>
+        </ul>
+        <div class="cta-row res-actions">
+          <a class="btn btn-accent" href="https://github.com/psu-abington-cisa/cisa-linux" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-line" href="https://github.com/psu-abington-cisa/cisa-linux#building-from-windows-using-wsl" target="_blank" rel="noopener">Build the ISO</a>
+        </div>
+        <p class="note">ISO download coming soon. Until then, ask an e-board member for a USB stick at the next session.</p>
+      </div>
+      <figure class="res-shot">
+        <img src="img/cisa-linux-boot.jpg" alt="The CISA Linux boot menu with the CISA badge" width="800" height="600" loading="lazy">
+        <figcaption>The boot menu works on modern laptops (UEFI with Secure Boot) and older BIOS machines.</figcaption>
+      </figure>
+    </div>
+
+    <div class="container">
+      <div class="topics res-tools">
+        <div class="topic topic-offense">
+          <h3>Offense</h3>
+          <ul class="chips">
+            <li>Nmap</li><li>Burp Suite</li><li>Metasploit</li><li>sqlmap</li><li>Gobuster</li><li>ffuf</li><li>Nikto</li><li>Hydra</li><li>John the Ripper</li><li>Hashcat</li>
+          </ul>
+        </div>
+        <div class="topic topic-defense">
+          <h3>Defense</h3>
+          <ul class="chips">
+            <li>Wireshark</li><li>tcpdump</li><li>Autopsy</li><li>Sleuth Kit</li><li>YARA</li><li>Binwalk</li><li>ExifTool</li><li>Ghidra</li><li>CyberChef</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cisa-rice" class="section section-alt" aria-labelledby="rice-heading">
+    <div class="container">
+      <div class="section-head-row">
+        <div>
+          <p class="kicker">CISA Rice</p>
+          <h2 id="rice-heading">Make it yours in one command.</h2>
+        </div>
+        <a class="btn btn-line" href="https://github.com/psu-abington-cisa/cisa-rice" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <p class="res-lede res-lede-wide">After installing CISA Linux, open the terminal and paste this. Pick a theme, and it changes your colors, wallpaper, icons, taskbar and terminal in one go. Switch any time from <strong>Start → CISA Themes</strong>, or undo with <code>--restore</code>.</p>
+
+      <figure class="terminal res-cmd">
+        <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span><em>Konsole</em></div>
+        <div class="res-cmd-row">
+<pre><code id="rice-cmd"><span class="t-prompt">$</span> curl -fsSL https://raw.githubusercontent.com/psu-abington-cisa/cisa-rice/main/install.sh | bash</code></pre>
+          <button type="button" class="res-copy" data-copy="curl -fsSL https://raw.githubusercontent.com/psu-abington-cisa/cisa-rice/main/install.sh | bash" aria-label="Copy the install command">Copy</button>
+        </div>
+        <figcaption class="visually-hidden">Install command for CISA Rice</figcaption>
+      </figure>
+
+      <ul class="res-themes" aria-label="Themes">
+        <li><figure><img src="img/theme-cisa-navy.jpg" alt="CISA Navy theme: navy desktop with the CISA badge" width="960" height="600" loading="lazy"><figcaption><strong>CISA Navy</strong>Official club colors</figcaption></figure></li>
+        <li><figure><img src="img/theme-green-phosphor.jpg" alt="Green Phosphor theme: black desktop with falling green code" width="960" height="600" loading="lazy"><figcaption><strong>Green Phosphor</strong>Hacker-movie terminal</figcaption></figure></li>
+        <li><figure><img src="img/theme-midnight-purple.jpg" alt="Midnight Purple theme: purple desktop with neon waves and a centered taskbar" width="960" height="600" loading="lazy"><figcaption><strong>Midnight Purple</strong>Late-night CTF vibes</figcaption></figure></li>
+        <li><figure><img src="img/theme-arctic-frost.jpg" alt="Arctic Frost theme: slate desktop with blue mountains" width="960" height="600" loading="lazy"><figcaption><strong>Arctic Frost</strong>Calm slate and ice blue</figcaption></figure></li>
+        <li><figure><img src="img/theme-daylight.jpg" alt="Daylight theme: light desktop like Windows 11" width="960" height="600" loading="lazy"><figcaption><strong>Daylight</strong>Light, like Windows 11</figcaption></figure></li>
+      </ul>
+      <p class="note">Bonus: the terminal prompt shows your VPN IP when you’re connected to TryHackMe or OffSec, so it’s ready to paste into a reverse shell.</p>
+    </div>
+  </section>
+
+  <section id="github" class="section" aria-labelledby="github-heading">
+    <div class="container">
+      <div class="section-head-row">
+        <div>
+          <p class="kicker">On GitHub</p>
+          <h2 id="github-heading">Read the code. Make it better.</h2>
+        </div>
+        <a class="btn btn-dark" href="https://github.com/psu-abington-cisa" target="_blank" rel="noopener">github.com/psu-abington-cisa →</a>
+      </div>
+      <div class="why res-repos">
+        <a class="card res-repo" href="https://github.com/psu-abington-cisa/cisa-linux" target="_blank" rel="noopener">
+          <span class="res-repo-name">cisa-linux</span>
+          <p>The build setup for CISA Linux. One script turns Debian into the ISO.</p>
+          <span class="res-repo-meta">Shell · live-build</span>
+        </a>
+        <a class="card res-repo" href="https://github.com/psu-abington-cisa/cisa-rice" target="_blank" rel="noopener">
+          <span class="res-repo-name">cisa-rice</span>
+          <p>Desktop themes for KDE Plasma. Add your own theme by writing a single file of colors.</p>
+          <span class="res-repo-meta">Shell · KDE Plasma 6</span>
+        </a>
+        <a class="card res-repo" href="https://github.com/psu-abington-cisa/collatz-brother-webapp" target="_blank" rel="noopener">
+          <span class="res-repo-name">collatz-brother-webapp</span>
+          <p>The practice target from our Come Hack web app penetration testing workshop.</p>
+          <span class="res-repo-meta">Workshop lab</span>
+        </a>
+        <a class="card res-repo" href="https://github.com/psu-abington-cisa/psu-abington-cisa.github.io" target="_blank" rel="noopener">
+          <span class="res-repo-name">psu-abington-cisa.github.io</span>
+          <p>This website. If you can edit a file on GitHub, you can help keep it current.</p>
+          <span class="res-repo-meta">HTML · CSS · JS</span>
+        </a>
+      </div>
+      <p class="note">Found a bug or have an idea? Open an issue on the repo, or bring it to the next session.</p>
+    </div>
+  </section>
+
+  <section id="learn" class="section section-alt" aria-labelledby="learn-heading">
+    <div class="container">
+      <p class="kicker">Keep learning</p>
+      <h2 id="learn-heading">Practice between sessions.</h2>
+      <div class="why">
+        <article class="card"><span class="card-n">01</span><h3>Our write-ups</h3><p>Step-by-step solutions from CISA members. <a href="../writing/">Read the write-ups</a>, then publish your own.</p></article>
+        <article class="card"><span class="card-n">02</span><h3>Session slides</h3><p>Missed a Come Hack? <a href="../come-hack-presentations/">Catch up on the slides</a> and redo the lab at home.</p></article>
+        <article class="card"><span class="card-n">03</span><h3>Training platforms</h3><p>The ones we use in sessions: <a href="https://tryhackme.com/login" target="_blank" rel="noopener">TryHackMe</a>, <a href="https://portswigger.net/web-security/all-labs" target="_blank" rel="noopener">PortSwigger</a>, <a href="https://portal.offsec.com/sign-up/community" target="_blank" rel="noopener">OffSec</a> and <a href="https://www.hacksmarter.org/catalog" target="_blank" rel="noopener">Hack Smarter</a>.</p></article>
+      </div>
+      <p class="note">Only practice on systems you own or have permission to test: these platforms, our labs, and your own VMs.</p>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="container cta-inner">
+      <div>
+        <h2 id="cta-title">Want help getting set up?</h2>
+        <p>Bring your laptop to a session and we’ll get CISA Linux running with you.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-light btn-lg" href="../#schedule">See the next session</a>
+        <a class="btn btn-outline-light btn-lg" href="https://github.com/psu-abington-cisa" target="_blank" rel="noopener">Browse our GitHub</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="../assets/img/cisa-logo.jpg" alt="" width="44" height="44">
+      <div>
+        <p>Cybersecurity &amp; IT Student Association · Penn State Abington</p>
+        <p class="footer-fine">A student organization website. Not an official publication of Penn State University. &copy; <span id="footer-year">2026</span> CISA.</p>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Elsewhere">
+      <a href="https://www.instagram.com/abingtoncisa" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://psuharrisburg.campuslabs.com/engage/organization/ab-cybersecurity" target="_blank" rel="noopener">Discover</a>
+      <a href="https://github.com/psu-abington-cisa" target="_blank" rel="noopener">GitHub</a>
+      <a href="../writing/">Write-ups</a>
+      <a href="../come-hack-presentations/">Presentations</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="resources.js"></script>
+</body>
+</html>

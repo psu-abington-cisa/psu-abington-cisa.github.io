@@ -16,6 +16,10 @@ The repo also holds the sub-sites, each in its own folder with its own README:
 - [`come-hack-presentations/`](come-hack-presentations/) — slides and recordings from Come Hack
   sessions (`cisa.cybernet.rocks/come-hack-presentations/`).
 - [`writing/`](writing/) — CTF write-ups, lab notes, and guides (`cisa.cybernet.rocks/writing/`).
+- [`resources/`](resources/) — tools CISA builds and shares (CISA Linux, CISA Rice themes) and
+  links to our [GitHub](https://github.com/psu-abington-cisa) (`cisa.cybernet.rocks/resources/`).
+  It's one static page that reuses the main stylesheet. To add a project, copy one of the
+  `res-repo` cards in `resources/index.html`. Screenshots live in `resources/img/`.
 
 ## Update the schedule
 
@@ -170,6 +174,7 @@ scripts/test-main.js             Node unit tests for assets/js/main.js helpers
 come-hack/                       Come Hack landing page (see come-hack/index.html)
 come-hack-presentations/         Come Hack slides site (see its README)
 writing/                         Write-ups site (see its README)
+resources/                       Resources page: CISA Linux, CISA Rice, GitHub projects
 .github/workflows/validate-data.yml  CI: runs every validator and test suite on push/PR
 ```
 
