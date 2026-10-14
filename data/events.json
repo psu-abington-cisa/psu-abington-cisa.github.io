@@ -30,7 +30,7 @@
       "summary": "Biweekly hands-on session: learn how real systems are attacked, defended, investigated, and analyzed. Laptop recommended; workstations available.",
       "description": "Led by Moussa Toure. Guided learning plus practical labs on cyber ranges (TryHackMe, OffSec Labs, Hack Smarter, PortSwigger) and custom-built labs. No prior experience required.",
       "url": "come-hack/",
-      "repeat": { "every": "2w", "until": "2026-12-10", "skip": ["2026-11-26","2026-10-29"] },
+      "repeat": { "every": "2w", "until": "2026-10-14"},
       "tags": [
         "Hands-on",
         "Biweekly"
@@ -53,6 +53,47 @@
       "Cybersecurity",
       "Career"
       ],
+    "featured": true
+    },
+    {
+    "id": "2026-11-05-cisa-final-answer",
+    "title": "CISA: Final Answer",
+    "date": "2026-11-05",
+    "start": "12:00",
+    "end": "14:00",
+    "location": "Banquet Room",
+    "type": "meeting",
+    "summary": "Test your cybersecurity and IT knowledge in a fun game-day competition featuring Jeopardy, Kahoot, Blooket, prizes, and pizza.",
+    "description": "Test your knowledge of cybersecurity and IT through a fun Jeopardy-style competition! Join CISA for questions, challenges, prizes, and pizza while competing with friends and fellow students. Enjoy Kahoot, Blooket, and other interactive games. All are welcome!",
+    "url": "https://psuharrisburg.campuslabs.com/engage/organization/ab-cybersecurity",
+    "tags": [
+      "Cybersecurity",
+      "Game Day",
+      "Jeopardy",
+      "Kahoot",
+      "Blooket",
+      "Networking"
+    ],
+    "featured": true
+    },
+    {
+    "id": "2026-11-18-trace-the-hacker",
+    "title": "Trace the Hacker",
+    "date": "2026-11-18",
+    "start": "12:00",
+    "end": "14:00",
+    "location": "Lubert Commons",
+    "type": "workshop",
+    "summary": "Work with a team to investigate a simulated hacking incident, analyze clues, and discover what happened.",
+    "description": "Put your cybersecurity skills to the test! Work with your team to investigate a simulated hacking incident, follow the clues, analyze the evidence, and figure out what happened. Solve the mystery and see if you can trace the hacker.",
+    "url": "https://psuharrisburg.campuslabs.com/engage/organization/ab-cybersecurity",
+    "tags": [
+      "Cybersecurity",
+      "Incident Investigation",
+      "Digital Forensics",
+      "Teamwork",
+      "Hacking Simulation"
+    ],
     "featured": true
     }
   ]
