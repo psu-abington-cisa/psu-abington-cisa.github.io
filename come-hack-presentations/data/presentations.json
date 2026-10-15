@@ -9,12 +9,20 @@
       "kaltura": ""
     },
     {
-      "id": "2026-10-01-web-hacking",
+      "id": "2026-10-01-phishing-emails",
       "title": "Phishing Emails Analysis",
       "date": "2026-10-01",
       "session": 2,
       "pdf": "presentations/come-hack-10-01-2026.pdf",
       "kaltura": ""
-    }
+    },
+    {
+  "id": "2026-10-15-cylabs-hacking",
+  "title": "CyLabs Workshop",
+  "date": "2026-10-15",
+  "session": 3,
+  "pdf": "presentations/come-hack-10-15-2026.pdf",
+  "kaltura": ""
+}
   ]
 }
